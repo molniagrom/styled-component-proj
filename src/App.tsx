@@ -24,10 +24,16 @@ function App() {
                 </ul>
             </Menu>
             <Box>
-                <StyledBtn>Hello</StyledBtn>
-                <StyledBtn as={"a"} href={"3"}>link</StyledBtn>
-                <StyledBtn as={Link} href={"3"}>linkComponent</StyledBtn>
-                <SuperButton>SuperButton</SuperButton>
+                {/*<StyledBtn fontSize={"30px"}>Hello</StyledBtn>*/}
+                {/*<StyledBtn fontSize={"20px"} color={"green"}>Hello</StyledBtn>*/}
+                {/*<StyledBtn color={"red"}>Hello</StyledBtn>*/}
+
+                <StyledBtn fontSize={"20px"} color={"green"} btnType={"primary"} >Hello</StyledBtn>
+                <StyledBtn fontSize={"20px"} color={"red"} btnType={"outline"} >Hello</StyledBtn>
+
+                {/*<StyledBtn as={"a"} href={"3"}>link</StyledBtn>*/}
+                {/*<StyledBtn as={Link} href={"3"}>linkComponent</StyledBtn>*/}
+                {/*<SuperButton>SuperButton</SuperButton>*/}
             </Box>
             <BoxCard>
                 <BoxContent>

@@ -1,23 +1,46 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {MyAnimation} from "../styles/animation/Animations";
 
+type StyledBtnPropsType = {
+    color?: string
+    fontSize?: string
+    btnType?: "primary" | "outline"
+    active?: boolean
+}
 
-export const StyledBtn = styled.button`
+export const StyledBtn = styled.button<StyledBtnPropsType>`
     border: none;
-    background-color: aquamarine;
+    background-color: ${props => props.color || "yellow"};
     padding: 10px 20px;
-    color: snow;
-    font-size: 2rem;
+    color: gray;
+    font-size: ${props => props.fontSize};
     font-weight: bold;
-    
-    &:hover {
-        background-color: coral;
-    }
-    
-    &:last-child{
-        background-color: forestgreen;
 
-    }
+    ${props => props.btnType === "outline" && css<StyledBtnPropsType>`
+        border: 2px solid ${props => props.color || "yellow"};
+        color: ${props => props.color || "yellow"};
+        background-color: transparent;
+        &:hover {
+            border-color: wheat;
+            color: wheat;
+            background-color: transparent;
+            box-shadow: 10px 10px 23px 3px rgba(138,171,179,0.86);
+        }
+    `}
+    ${props => props.btnType === "primary" && css<StyledBtnPropsType>`
+        background-color: ${props => props.color || "yellow"};
+        color: black;
+        &:hover {
+            background-color: blueviolet;
+            box-shadow: 10px 10px 23px 3px rgba(138,171,179,0.86);
+        }
+    `}
+    
+        ${props => props.active && css<StyledBtnPropsType>`
+            box-shadow: 10px 10px 23px 3px rgba(138,171,179,0.86);
+        `}
+
+    
 `
 
 

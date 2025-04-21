@@ -21,11 +21,15 @@ export const BoxContent = styled.div`
     border: 1px solid wheat;
     box-shadow: 18px 15px 20px -7px rgba(144, 186, 232, 0.78);
     text-align: center;
-    width: 33%;
+    width: 30vw;
     margin: 0 auto;
     padding: 15px 15px 45px 15px; /* чтобы не наехал на нижнюю границу */
     p + p {
         padding-bottom: 20px;
+    }
+    
+    @media (max-width: 800px) {
+        width: 70vw;
     }
     
 `
